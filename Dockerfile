@@ -1,4 +1,5 @@
-FROM nginx:1.21.6-alpine
+# FROM nginx:1.21.6-alpine
+FROM nginx:1.20.2
 
 ADD config/conf.d /etc/nginx/conf.d
 RUN ls -lrt /etc/nginx/conf.d
