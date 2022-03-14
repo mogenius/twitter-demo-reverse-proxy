@@ -1,5 +1,23 @@
-<h1>Mogenius demo setup for multiple API services with nginx reverse proxy</h1>
-<p>
-    <a href="service/1">/service/1</a>  
-    <a href="service/2">/service/2</a>
-</p>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js" integrity="sha512-vx8rJNrYIZPDr290AV2tL04x0CKjLHSnTXrHMeb1kqbhfGwBnclPDOWIWxRiVS6Oe1oGzk5MzNz/eLzVku30kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="targetDiv"></div>
+    <script>
+        fetch('README.md')
+            .then(response => {
+                let readme = response.text();
+                let target = document.getElementById('targetDiv');
+                let converter = new showdown.Converter();
+                
+                target.innerHTML = converter.makeHtml(readme);
+            });
+    </script>
+</body>
+
+</html>
