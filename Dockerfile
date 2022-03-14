@@ -7,4 +7,4 @@ ADD include /etc/nginx/include.d
 RUN ls -lrt /etc/nginx/include.d
 
 ADD html /usr/share/nginx/html
-RUN ls -lrt /etc/nginx/html
+RUN ls -lrt /usr/share/nginx/html
