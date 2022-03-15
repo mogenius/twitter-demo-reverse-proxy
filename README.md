@@ -24,7 +24,7 @@ get('/product/:type/color/:color', $handle);
 get('/item/:name', $handle);
 ```
 
-[Service B: /product/:type/color/:color](/service/2/e-class/color/gray)
+[Service B: /product/:type/color/:color](/service/2/product/e-class/color/gray)
 
 [Service B: /item/:name](/service/2/item/t-shirt)
 
