@@ -2,6 +2,10 @@
 
 ## API endpoints
 
-[Service A](/service/1)
+[Service A with params](/service/1?param1=value1)
 
-[Service B](/service/2)
+[Service A with path and params](/service/1/new/route1?param1=value1)
+
+[Service B with params](/service/2?param1=value1)
+
+[Service B with path and params](/service/2/new/route2?param1=value1)
