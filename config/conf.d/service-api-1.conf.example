@@ -1,9 +1,0 @@
-server {
-    listen         80;
-    server_name    custom-php-002-dev-my-space-urrr5e.dev.mogenius.io;
-
-    location /service/1 {
-        set $target http://custom-php-ser-le7cad:80;
-        proxy_pass $target;
-    }
-}
