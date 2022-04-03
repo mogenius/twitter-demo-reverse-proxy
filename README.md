@@ -17,6 +17,8 @@ get('/user/:name/:last_name', $handle);
 
 [Service A with params](/service/1?param1=value1)
 
+[Service A with encoded url in path](/service/1/redirect/:url|url-encode)
+
 ### Routes Service 2
 ```
 get('/', $handle);

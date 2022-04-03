@@ -1,6 +1,9 @@
 # FROM nginx:1.21.6-alpine
 FROM nginx:1.20.2
 
+# copy ssl certs
+ADD config/cert /etc/nginx
+
 ADD config/conf.d /etc/nginx/conf.d
 RUN ls -lrt /etc/nginx/conf.d
 
@@ -11,3 +14,4 @@ ADD html /usr/share/nginx/html
 COPY README.md /usr/share/nginx/html
 RUN ls -lrt /usr/share/nginx/html
 
+EXPOSE 80 443
