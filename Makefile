@@ -1,4 +1,3 @@
-expose := 8080
 network := my-mogenius-net
 
 all: build run
@@ -11,7 +10,7 @@ build:
 
 run:
 	docker run \
-		-p ${expose}:80 \
+		-p 80:80 \
 		-p 443:443 \
 		--network my-mogenius-net \
 		--name nginx-proxy-service \
