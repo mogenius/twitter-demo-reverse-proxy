@@ -19,7 +19,7 @@ run: docker-rm-container docker-rm-images
 		${service};
 
 docker-rm-images:
-		docker image prune -f;
+		-docker image prune -f;
 
 docker-rm-container:
-		docker rm $$(docker stop $$(docker ps -a -q --filter="name=${name}" --format="{{.ID}}"));
+		-docker rm $$(docker stop $$(docker ps -a -q --filter="name=${name}" --format="{{.ID}}"));
