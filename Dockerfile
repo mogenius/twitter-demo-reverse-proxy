@@ -2,7 +2,7 @@
 FROM nginx:1.20.2
 
 # copy ssl certs
-ADD config/cert /etc/nginx
+# ADD config/cert /etc/nginx
 
 ADD config/conf.d /etc/nginx/conf.d
 RUN ls -lrt /etc/nginx/conf.d
