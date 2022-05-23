@@ -14,4 +14,4 @@ ADD html /usr/share/nginx/html
 COPY README.md /usr/share/nginx/html
 RUN ls -lrt /usr/share/nginx/html
 
-EXPOSE 80 443
+EXPOSE 80
