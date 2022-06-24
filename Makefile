@@ -8,7 +8,7 @@ network:
 	docker network create $(network);
 
 build: docker-rm-images
-	docker build --no-cache -t ${service}:latest .;
+	docker build --no-cache  --build-arg env=local -t  ${service}:latest .;
 
 run: docker-rm-container docker-rm-images
 	docker run \
