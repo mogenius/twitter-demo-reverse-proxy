@@ -1,17 +1,29 @@
-# FROM nginx:1.21.6-alpine
-FROM nginx:1.20.2
+ARG env=prod
 
+<<<<<<< HEAD
 # copy ssl certs
 # ADD config/cert /etc/nginx
+=======
+FROM nginx:1.20.2 AS base
+>>>>>>> develop
 
-ADD config/conf.d /etc/nginx/conf.d
-RUN ls -lrt /etc/nginx/conf.d
+FROM base AS branch-version-local
+COPY config/cert /etc/nginx
+COPY config/conf.d/default.local.conf /etc/nginx/conf.d/default.conf
+COPY config/include.d/*.local.conf /etc/nginx/include.d/
+EXPOSE 80 443
 
-ADD config/include.d /etc/nginx/include.d
-RUN ls -lrt /etc/nginx/include.d
+FROM base AS branch-version-prod
+COPY config/conf.d/default.prod.conf /etc/nginx/conf.d/default.conf
+ADD config/include.d/*.prod.conf /etc/nginx/include.d/
+EXPOSE 80
 
-ADD html /usr/share/nginx/html
+FROM branch-version-${env} AS final
+COPY html /usr/share/nginx/html
 COPY README.md /usr/share/nginx/html
+<<<<<<< HEAD
 RUN ls -lrt /usr/share/nginx/html
 
 EXPOSE 80
+=======
+>>>>>>> develop
